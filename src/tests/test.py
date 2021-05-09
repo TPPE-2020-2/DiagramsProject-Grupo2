@@ -134,8 +134,8 @@ class TestProject:
 
 #testes diagrama de sequencia
     def test_sequence_element(self):
-        sequenceElement = SequenceElement("sequence element name")
-        assert(sequenceElement.name == "sequence element name")
+        sequenceElement = SequenceElement()
+        assert(sequenceElement.name == '')
         assert(sequenceElement.type == '')
 
     def test_fragment(self):
@@ -144,7 +144,11 @@ class TestProject:
         assert(fragment.representedBy == "representation")
 
     def test_fragment_reference(self):
-        fragment = FragmentReference("Fragment")
+        fragment = FragmentReference()
+        element = {
+            "name": "name"
+        }
+        fragment.create_node(element)
         assert(fragment.type == "Fragment")
 
     def test_lifeline(self):
@@ -152,7 +156,16 @@ class TestProject:
         assert(lifeline.name == "lifeline")
 
     def test_message(self):
-        message = Message("message name", "sync", 1, "source message", "target message")
+        message = Message()
+        element = {
+            "name": "message name",
+            "message_type": "sync",
+            "prob": 1,
+            "source": "source message",
+            "target": "target message"
+        }
+
+        message.create_node(element)
         assert(message.name == "message name")
         assert(message.message_type == "sync")
         assert(message.prob == 1)
@@ -179,11 +192,11 @@ class TestProject:
     def test_activity_with_sequence_diagrams(self):
         activityDiagrams = ActivityDiagram(index.dict_activity_diagram)
         sequenceDiagrams = SequenceDiagrams(index.dict_sequence_diagram)
-        with open('diagrams.xml', 'w+') as f:
+        with open('src/tests/diagrams.xml', 'w+') as f:
             activityDiagrams.getXml(f)
             sequenceDiagrams.getXml(f)
         
-        with open('diagrams.xml', 'r') as f:
+        with open('src/tests/diagrams.xml', 'r') as f:
             data=f.readlines()
             print(data)
             assert(len(data) == 37)
