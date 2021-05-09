@@ -8,7 +8,7 @@
 
 > pip3 install pytest 
 
-> python3 -m pytest tests/testes.py
+> python3 -m pytest src/tests/test.py
 
 ## Autores
 
