@@ -8,6 +8,11 @@ sys.path.insert(0, PROJECT_DIR)
 from diagrams.activity_diagram import ActivityDiagram
 from diagrams.sequence_diagrams import SequenceDiagrams
 
+class DiagramTool:
+    def __init__(self, activity_diagram, sequence_diagrams):
+        self.activity_diagram = activity_diagram
+        self.sequence_diagrams = sequence_diagrams
+
 def diagram_tool(activity_diagram, sequence_diagrams):
   diagram1=ActivityDiagram(activity_diagram)
   diagram2=SequenceDiagrams(sequence_diagrams)
@@ -22,7 +27,7 @@ def diagram_tool(activity_diagram, sequence_diagrams):
               if diagram.name == element.name:
                   found_diagram = True
                   break
-          
+
           if not found_diagram:
               raise Exception("ActivityRepresentationException")
 
@@ -170,4 +175,5 @@ dict_sequence_diagram = {
     ]
 }
 
-diagram_tool(dict_activity_diagram, dict_sequence_diagram)
+d = DiagramTool(dict_activity_diagram, dict_sequence_diagram)
+diagram_tool(d.activity_diagram,d.sequence_diagrams)
