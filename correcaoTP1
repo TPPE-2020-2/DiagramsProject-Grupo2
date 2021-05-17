@@ -1,0 +1,26 @@
+Observações: 
+------------
+A aplicação não permite a interação com o usuário para criar os diagramas,
+contudo ela constrói os diagramas de uma SPL pré-definida em index.py. Todas
+lifelines têm o mesmo nome, logo não é possível determinar os objetos de cada
+uma das lifelines criadas.  ActivityRepresentationException não é lançada /
+capturada. Lançamento/tratamento de exceções não foram testados (não há testes
+nesse sentido). Não há testes parametrizados. Não foram criadas classes de
+exceção, mas apenas lançados objetos do tipo EXCEPTION com variações nas
+mensagens de exceção. 
+
+Critérios de avaliação:
+-----------------------
+
+O programa funciona como deveria (30 %)? 30 pontos. 
+
+Testes parametrizados foram implementados (20%) ? 0 pontos - não há teste
+parametrizados. 
+
+Classes de exceções foram implementadas? Excecoes foram lançadas e tratadas?
+Testes de excecoes foram implementados? (- 10% para cada exceção não
+implementada adequadamente, limitado a 50% da nota): 0 pontos - não foram
+criadas classes de exceção e, por isso, objetos de exceção não foram lançados.
+
+
+NOTA FINAL: 30 pontos.
