@@ -1,0 +1,33 @@
+Observações:
+------------
+Testes continuaram passando. 
+
+A classe SequenceDiagrams foi extraida inteiramente para um método extraído,
+chamado `extracted_sequence_diagram`... A refatoração não define isso... A
+refatoração é definida como a extração de instruções de um método para um novo
+método. 
+
+Não foi feita a movimentação de método ou atributo (Mover método ou Mover
+atributo) em `main.py`. Foi criada uma classe `DiagramTool` em que nela foi
+definido um método construtor que inicializa os atributos do objeto com o
+objetos criados no método `diagram_tool`. Em resumo, não há movimentação de
+recursos mas apenas duplicação de referências. 
+
+Apesar da classe XMLGenerator guardar uma cópia dos elementos ActivityDiagram
+(quando deveria armazenar apenas uma referencia para a classe de origem), a
+refatoração foi implementada de maneira bastante satisfatória. 
+
+
+Critérios de avaliação:
+-----------------------
+
+Ref. 1 - mover método ou mover atributo (20 pontos): NOk - 0 pontos. 
+
+Ref. 2 - extrair método (20 pontos): NOk - 0 pontos.
+
+Ref. 3 - substituir método por objeto-método (30 pontos): OK - 30 pontos. 
+
+Ref. 4 - substituir condicional por polimorfismo (30 pontos): OK - 30 pontos. 
+
+
+NOTA FINAL: 60 pontos.
